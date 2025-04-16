@@ -4,17 +4,18 @@
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 header {
   background-color: #3b64b6;
+  padding: 1.5rem 2rem;
 }
 
-nav.menu li {
-  display: inline-block;
-  padding: 1.5rem 0;
-  margin: 0 0 0 2rem;
-  list-style: none;
+nav.menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
 }
 
 nav.menu li a {
@@ -30,9 +31,24 @@ nav.menu li a:hover {
 }
 
 section {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 3.5rem;
   border-bottom: 1px solid #d3d3d3;
+  min-height: 600px;
+}
+
+section#home {
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+
+section#home > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 
 img {
@@ -41,7 +57,7 @@ img {
 
 h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: .4rem;
 }
 
 .btn-default {
@@ -51,7 +67,7 @@ h2 {
   color: #ffffff;
   background-color: #3c63b5;
   font-size: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
 }
 
 .btn-default:hover {
@@ -59,10 +75,33 @@ h2 {
   font-weight: bold;
 }
 
-#planos table {
+section#quem-somos {
+  flex-direction: row;
+  gap: 2rem;
+}
+
+section#quem-somos > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  max-width: 600px;
+}
+
+section#quem-somos > img {
+  width: 40%;
+  max-width: 600px;
+}
+
+section#planos {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+section#planos table {
   border-collapse: collapse;
   width: 65%;
-  margin: auto;
 }
 
 td, th {
