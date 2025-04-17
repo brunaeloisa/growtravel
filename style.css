@@ -9,55 +9,43 @@
 
 header {
   background-color: #3b64b6;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
 }
 
 nav.menu ul {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
   list-style-type: none;
 }
-
-nav.menu li a {
+  
+nav.menu li > a {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
 }
 
-nav.menu li a:hover {
-  color: rgb(167, 220, 255);
-  text-decoration: underline;
+h2 {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  text-align: center;
 }
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3.5rem;
+  padding: 3rem 1.5rem;
   border-bottom: 1px solid #d3d3d3;
-  min-height: 600px;
-}
-
-section#home {
-  flex-direction: row-reverse;
-  gap: 20px;
 }
 
 section#home > div {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-}
-
-img {
-  width: 450px;
-}
-
-h2 {
-  font-size: 3rem;
-  margin-bottom: .4rem;
 }
 
 .btn-default {
@@ -67,41 +55,28 @@ h2 {
   color: #ffffff;
   background-color: #3c63b5;
   font-size: 1rem;
-  margin-top: 1.8rem;
-}
-
-.btn-default:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-section#quem-somos {
-  flex-direction: row;
-  gap: 2rem;
-}
-
-section#quem-somos > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 60%;
-  max-width: 600px;
-}
-
-section#quem-somos > img {
-  width: 40%;
-  max-width: 600px;
+  margin: 1.8rem 0;
 }
 
 section#planos {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
 }
 
+div#table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
 section#planos table {
   border-collapse: collapse;
-  width: 65%;
+  text-align: center;
+  min-width: 450px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
 }
 
 td, th {
@@ -123,9 +98,89 @@ footer p {
 #float-button {
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
 }
 
 #float-button > img {
-  width: 64px;
+  width: 60px;
+}
+
+@media screen and (min-width: 580px) {
+  nav.menu ul {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  nav.menu li a:hover {
+    color: #b5e1ff;
+    text-decoration: underline;
+  }
+
+  section {
+    padding: 3rem;
+  }
+
+  section img {
+    width: 70%;
+  }
+ 
+  .btn-default:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  section {
+    padding: 3.5rem;
+    min-height: 600px;
+  }
+
+  section img {
+    max-width: 550px;
+  }
+  
+  section h2 {
+    margin-bottom: 5px;
+  }
+
+  section#home {
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+  
+  section#home > div {
+    align-items: flex-start;
+  }
+  
+  section#quem-somos {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  section#quem-somos > img {
+    width: 50%;
+  }
+
+  section#quem-somos > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    max-width: 550px;
+  }
+
+  section#quem-somos h2 {
+    text-align: left;
+  }
+  
+  #float-button {
+    right: 30px;
+  }
+  
+  #float-button > img {
+    width: 64px;
+  }
 }
